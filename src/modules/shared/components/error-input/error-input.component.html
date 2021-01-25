@@ -1,0 +1,18 @@
+<mat-error *ngIf="showErrors('required')">
+	<i class="material-icons md-12">error</i> Campo <strong>{{inputLabel.toLowerCase()}}</strong> requerido
+</mat-error>
+<mat-error *ngIf="showErrors('minlength')">
+	<i class="material-icons md-12">error</i> El campo <strong>{{inputLabel.toLowerCase()}}</strong> debe contener mínimo <strong>{{getRequiredLengthInput('minlength')}}</strong> caracteres
+</mat-error>
+<mat-error *ngIf="showErrors('maxlength')">
+	<i class="material-icons md-12">error</i> El campo <strong>{{inputLabel.toLowerCase()}}</strong> debe contener maximo <strong>{{getRequiredLengthInput('maxlength')}}</strong> caracteres
+</mat-error>
+<mat-error *ngIf="showErrors('pattern')">
+	<i class="material-icons md-12">error</i> El campo <strong>{{inputLabel.toLowerCase()}}</strong> es invalido
+</mat-error>
+<mat-error *ngIf="showErrors('higherOrderValue')">
+	<i class="material-icons md-12">error</i> El campo <strong>{{inputLabel.toLowerCase()}}</strong> debe ser mayor al <strong>saldo consumido</strong>
+</mat-error>
+<mat-error *ngIf="showErrors('higherInvoicedValue')">
+	<i class="material-icons md-12">error</i> El campo <strong>{{inputLabel.toLowerCase()}}</strong> debe ser menor al <strong>valor a facturar</strong>
+</mat-error>

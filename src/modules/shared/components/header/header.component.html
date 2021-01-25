@@ -1,0 +1,12 @@
+<div id="header" class="header">
+    <button mat-button class="element-menu" [matMenuTriggerFor]="menu1">Menu1</button>
+    <mat-menu #menu1="matMenu">
+        <button mat-menu-item (click)="redirect('/administracion/cargues')" type="button">Test Modal - API</button>
+    </mat-menu>
+    <button mat-button class="element-menu" [matMenuTriggerFor]="menu3">Menu3</button>
+    <mat-menu #menu3="matMenu">
+        <button mat-menu-item (click)="redirect('/menu3/agregar')" type="button">Agregar</button>
+        <button mat-menu-item (click)="redirect('/menu3')" type="button">Listar</button>
+    </mat-menu>
+    <button mat-flat-button class="btn logout-button" (click)="logout()" type="button">Logout</button>
+</div>

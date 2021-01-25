@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <h2>Agregar</h2>
+        </mat-card-title>
+        <div class="wraper-button">
+            <button class="return-button" mat-flat-button (click)="goToBack()" type="button">Volver</button>
+        </div>
+    </mat-card-header>
+    <hr>
+    <form [formGroup]="_AddFormGroup">
+        <div id="dnfo">
+            <h3>Información</h3>
+            <div id="documentData">
+                <div id="documentType">
+                    <mat-form-field>
+                        <mat-select formControlName="documentType" (ngModelChange)="getInfo($event)" placeholder="Tipo de documento:">
+                            <mat-option *ngFor="let docType of _documentTypes" [value]="docType.tipoDocumentoId">
+                                {{docType.nombreDocumento}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <error-input *ngIf="_showFormErrors || _showInputErrorsForInfo" [errors]="getInputErrors('documentType')" [inputLabel]="'Tipo de documento'"></error-input>
+                </div>
+                <div id="documentNumber">
+                    <mat-form-field>
+                        <input matInput formControlName="documentNumber" (ngModelChange)="getInfo($event)" placeholder="Numero de documento:" type="text" autocomplete="off">
+                    </mat-form-field>
+                    <error-input *ngIf="_showFormErrors || _showInputErrorsForInfoClient" [errors]="getInputErrors('documentNumber')" [inputLabel]="'Numero de documento'"></error-input>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <info-menu3-common
+									[parentForm]="_AddFormGroup"
+									[showFormErrors]="_showFormErrors"
+									[resetChilds]="_resetChilds"
+									(businessDaysDetailOut)="setBusinessDaysDetail($event)">
+								</info-menu3-common>
+        <br><br>
+        <div id="saveButton">
+            <button mat-flat-button class="save-button" (click)="save()" type="button">Guardar</button>
+        </div>
+    </form>
+</mat-card>

@@ -1,0 +1,66 @@
+@import "~modules/shared/shared-styles";
+mat-card {
+	width: 90%;
+	margin: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	border-style: ridge;
+	border-color: @black-color;
+	h1 {
+		color: @black-color;
+	}
+	.noData {
+		text-align: center;
+		font-size: 1.5em;
+		color: gray;
+	}
+	.features-table-container {
+		overflow: auto;
+	}
+	.feature-search {
+		float: left;
+		.material-icons.md-20 {
+			font-size: 20px;
+			color: @black-color;
+		}
+	}
+	.feature-xlsx {
+		float: right;
+		.xlsx-download {
+			background-color: @green-color;
+			color: @white-color;
+		}
+	}
+	mat-table {
+		.purpleIcon {
+			color: @black-color;
+		}
+		.redIcon {
+			color: @red-color;
+		}
+		.mat-header-cell {
+			font-size: 90%;
+		}
+		.cdk-column-tipoXInformacionId {
+			flex: 0 0 7%;
+		}
+		.cdk-column-clienteNombre {
+			flex: 0 0 27%;
+		}
+		.cdk-column-tipoNombre {
+			flex: 0 0 10%;
+		}
+		.cdk-column-numeroDocumento {
+			flex: 0 0 10%;
+		}
+		.cdk-column-options {
+			flex: 0 0 10%;
+		}
+		.cdk-column-ynDescuenta {
+			flex: 0 0 7%;
+		}
+		.cdk-column-ynDescontado {
+			flex: 0 0 7%;
+		}
+	}
+}

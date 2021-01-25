@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <i class="material-icons md-36" [ngClass]="alertDialogData.icon + '-icon'">{{alertDialogData.icon}}</i>
+    <p>{{alertDialogData.message}}</p>
+</div>
+<div *ngIf="!alertDialogData.isConfirmDialog" mat-dialog-actions>
+    <button mat-flat-button (click)="onNoClick()" type="button">Aceptar</button>
+</div>
+<div *ngIf="alertDialogData.isConfirmDialog" class="confirm-buttons" mat-dialog-actions>
+    <button mat-flat-button [mat-dialog-close]="accept()" cdkFocusInitial type="button">{{alertConfigConfirm.buttonOk}}</button>
+    <button mat-flat-button (click)="onNoClick()" type="button">{{alertConfigConfirm.buttonCancel}}</button>
+</div>

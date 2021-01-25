@@ -1,0 +1,64 @@
+<mat-card>
+    <h1>Lista</h1>
+    <div *ngIf="_loadingMenu3">
+        <h2>Cargando!..</h2>
+    </div>
+    <div *ngIf="!_dataSource.data.length" class="noData">
+        <p>El módulo no presenta informacion</p>
+    </div>
+    <div class="features-table-container">
+        <div class="feature-search">
+            <i class="material-icons md-20">search</i>
+            <mat-form-field>
+                <input matInput id="buscar" placeholder="Buscar:" type="text" (keyup)="dataFilter($event.target.value)"
+                    autocomplete="off">
+            </mat-form-field>
+        </div>
+        <div class="feature-xlsx">
+            <button mat-icon-button class="xlsx-download" matTooltip='Descargar' (click)="exportFileXlsx()">
+                <mat-icon>insert_drive_file</mat-icon>
+            </button>
+        </div>
+    </div>
+    <mat-table [dataSource]="_dataSource" matSort class="mat-elevation-z8">
+        <ng-container matColumnDef="tipoXInformacionId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.tipoXInformacionId}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="numeroDocumento">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Numero de documento</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.numeroDocumento}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="p">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>P</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.p}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="tipoNombre">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.tipoNombre}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="clienteNombre">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>C</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.clienteNombre}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ynDescuenta">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Descuenta</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.ynDescuenta}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ynDescontado">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Descontó?</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.ynDescontado}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="options">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Opciones</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button mat-icon-button [matTooltip]="'Ver mas'" (click)="nDetail(element)">
+                    <mat-icon class="purpleIcon">description</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="_displayedColumns; sticky: true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: _displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="_pageSizeOptions"></mat-paginator>
+</mat-card>

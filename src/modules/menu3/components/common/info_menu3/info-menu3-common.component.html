@@ -1,0 +1,55 @@
+<div id="nInfo" [formGroup]="parentForm">
+    <h3>Información:</h3>
+    <div id="nData">
+        <mat-form-field>
+            <mat-select formControlName="nType" (ngModelChange)="doApplyLogicSpecialType($event)" placeholder="Tipo:">
+                <mat-option *ngFor="let nType of _nTypes" [value]="nType.tipoId">
+                    {{nType.tipoNombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <error-input *ngIf="showFormErrors" [errors]="getInputErrors('nType')" [inputLabel]="'Tipo'"></error-input>
+        <br>
+        <mat-form-field class="csDate">
+            <input matInput formControlName="initialDate" (ngModelChange)="getBusinessDays($event, 'initialDate')" [matDatepicker]="id" [max]="_maxInitialDate" placeholder="Fecha inicial:" autocomplete="off" readonly>
+            <mat-datepicker-toggle matSuffix [for]="id"></mat-datepicker-toggle>
+            <mat-datepicker #id disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <error-input *ngIf="showFormErrors || _showInputDateErrorsForBD" [errors]="getInputErrors('initialDate')" [inputLabel]="'Fecha inicial'"></error-input>
+        <mat-form-field class="csDate">
+            <input matInput formControlName="endDate" (ngModelChange)="getBusinessDays($event, 'endDate')" [matDatepicker]="ed" [min]="_minEndDate" placeholder="Fecha final:" autocomplete="off" readonly>
+            <mat-datepicker-toggle matSuffix [for]="ed"></mat-datepicker-toggle>
+            <mat-datepicker #ed disabled="false"></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <error-input *ngIf="showFormErrors || _showInputDateErrorsForBD" [errors]="getInputErrors('endDate')" [inputLabel]="'Fecha final'"></error-input>
+        <br>
+        <div *ngIf="_showPermissionDays">
+            <mat-form-field>
+                <mat-select formControlName="permissionTime" (ngModelChange)="getBusinessDaysBySpecialType($event)" placeholder="Tiempo de permiso:">
+                    <mat-option *ngFor="let pt of _permissionTimes" [value]="pt.timeValue">
+                        {{pt.timeValueName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <error-input *ngIf="showFormErrors" [errors]="getInputErrors('permissionTime')" [inputLabel]="'Tiempo de permiso'"></error-input>
+        </div>
+        <label>Desea descontar </label>
+        <mat-radio-group formControlName="nDisccount">
+            <mat-radio-button class="radio" [value]="true"> Si </mat-radio-button>
+            <mat-radio-button class="radio" [value]="false"> No </mat-radio-button>
+        </mat-radio-group>
+        <error-input *ngIf="showFormErrors" [errors]="getInputErrors('nDisccount')" [inputLabel]="'Descuenta'"></error-input>
+    </div>
+    <div id="nBdDetail">
+        <h2 *ngIf="_businessDaysLoading">Cargando!..</h2>
+        <div *ngIf="_businessDaysLoading === false" id="businessDays">
+            <h3>Resúmen dias habiles:</h3>
+            <div *ngFor="let bd of _businessDaysDetail">
+                {{bd.monthName}}: <strong>{{bd.days}}</strong> dias hábiles.
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
