@@ -48,7 +48,7 @@ export class InfoMenu3CommonComponent {
 
 	ngOnInit() {
 		this.getTypes();
-		this.getPermissionTimes();
+		this.getValues();
 	}
 
 	ngOnChanges(changes) {
@@ -73,10 +73,10 @@ export class InfoMenu3CommonComponent {
 	}
 
 	private buildFormPreChargue(infoData: InfoData): void {
-		this.parentForm.controls['nType'].setValue(infoData.tipoId);
+		this.parentForm.controls['type'].setValue(infoData.tipoId);
 		this.parentForm.controls['initialDate'].setValue(infoData.initialDate);
 		this.parentForm.controls['endDate'].setValue(infoData.endDate);
-		this.parentForm.controls['nDisccount'].setValue(infoData.disccount);
+		this.parentForm.controls['disccount'].setValue(infoData.disccount);
 		this.handleCalendarDates('initialDate', 'startEvent');
 		this.getBusinessDays('startEvent', 'endDate');
 		if(this.doApplyLogicSpecialType('startEvent')) {
@@ -94,7 +94,7 @@ export class InfoMenu3CommonComponent {
 		)
 	}
 
-	private getPermissionTimes(): void {
+	private getValues(): void {
 		this._permissionTimes = [
 			{timeValue: 0.5, timeValueName: 'Medio dia'},
 			{timeValue: 1, timeValueName: 'Un dia'}
@@ -180,8 +180,8 @@ export class InfoMenu3CommonComponent {
 	private validateNotifyBusinessDays(monthsLength: number): void {
 		if(monthsLength > 1) {
 			this.apiFrontFacadeService.showNotify(
-				'Las novedades serán descontadas durante el mes de la conciliación.',
-				'notification_important'
+				'Se encontraron varios registros en el calculo',
+				'done'
 			);
 		}
 	}
@@ -207,7 +207,7 @@ export class InfoMenu3CommonComponent {
 
 	doApplyLogicSpecialType(event: string): boolean {
 		if(event) {
-			let nTypeId: number = parseInt(this.parentForm.controls.nType.value);
+			let nTypeId: number = parseInt(this.parentForm.controls.type.value);
 			let initialDate: string = this.apiFrontFacadeService.applyDatePipe(
 				this.parentForm.controls.initialDate.value
 			);

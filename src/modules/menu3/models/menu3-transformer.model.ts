@@ -58,11 +58,11 @@ export class Menu3TransformerModel {
 		let fechaInicio: string = this.apiFrontFacadeService.applyDatePipe(nAddFormGroup.controls.initialDate.value, 'yyyy-MM-dd');
 		let fechaFin: string = this.apiFrontFacadeService.applyDatePipe(nAddFormGroup.controls.endDate.value, 'yyyy-MM-dd');
 		return {
-			tipoId: parseInt(nAddFormGroup.controls.nType.value),
+			tipoId: parseInt(nAddFormGroup.controls.type.value),
 		 	fechaInicio: fechaInicio,
 		 	fechaFin: fechaFin,
 		 	diasAusenciaTotal: daysTotal,
-		 	descuenta: nAddFormGroup.controls.nDisccount.value,
+		 	descuenta: nAddFormGroup.controls.disccount.value,
 		 	detalleMesDTO: businessDaysDetail
 		}
 	}
@@ -75,11 +75,11 @@ export class Menu3TransformerModel {
 		let fechaInicio: string = this.apiFrontFacadeService.applyDatePipe(modifyFormGroup.controls.initialDate.value, 'yyyy-MM-dd');
 		let fechaFin: string = this.apiFrontFacadeService.applyDatePipe(modifyFormGroup.controls.endDate.value, 'yyyy-MM-dd');
 		return {
-			tipoId: parseInt(modifyFormGroup.controls.nType.value),
+			tipoId: parseInt(modifyFormGroup.controls.type.value),
 		  fechaInicio: fechaInicio,
 		  fechaFin: fechaFin,
 		  diasAusenciaTotal: daysTotal,
-			descuenta: modifyFormGroup.controls.nDisccount.value,
+			descuenta: modifyFormGroup.controls.disccount.value,
 			detalleMesDTO: businessDaysDetail
 		}
 	}

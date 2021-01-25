@@ -1,5 +1,5 @@
 <mat-card>
-    <h1>Lista</h1>
+    <h1>Lista Registros Menu 3</h1>
     <div *ngIf="_loadingMenu3">
         <h2>Cargando!..</h2>
     </div>
@@ -22,7 +22,7 @@
     </div>
     <mat-table [dataSource]="_dataSource" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="tipoXInformacionId">
-            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.tipoXInformacionId}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="numeroDocumento">
@@ -34,12 +34,12 @@
             <mat-cell *matCellDef="let element"> {{element.p}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="tipoNombre">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo Nombre</mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.tipoNombre}} </mat-cell>
         </ng-container>
-        <ng-container matColumnDef="clienteNombre">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>C</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.clienteNombre}} </mat-cell>
+        <ng-container matColumnDef="cNombre">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.cNombre}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="ynDescuenta">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Descuenta</mat-header-cell>
@@ -53,7 +53,15 @@
             <mat-header-cell *matHeaderCellDef mat-sort-header>Opciones</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <button mat-icon-button [matTooltip]="'Ver mas'" (click)="nDetail(element)">
-                    <mat-icon class="purpleIcon">description</mat-icon>
+                    <mat-icon class="redIcon">description</mat-icon>
+                </button>
+                <button mat-icon-button [matTooltip]="getTooltipMessage('Modificar registro ', element.tipoXInformacionId)"
+                    (click)="modify(element.tipoXInformacionId)">
+                    <mat-icon class="redIcon">edit</mat-icon>
+                </button>
+                <button mat-icon-button [matTooltip]="getTooltipMessage('Eliminar registro ', element.tipoXInformacionId)"
+                    (click)="delete(element.tipoXInformacionId)">
+                    <mat-icon class="redIcon">remove</mat-icon>
                 </button>
             </mat-cell>
         </ng-container>

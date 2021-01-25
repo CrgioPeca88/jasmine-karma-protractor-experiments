@@ -14,7 +14,7 @@
             <div id="documentData">
                 <div id="documentType">
                     <mat-form-field>
-                        <mat-select formControlName="documentType" (ngModelChange)="getInfo($event)" placeholder="Tipo de documento:">
+                        <mat-select formControlName="documentType" placeholder="Tipo de documento:">
                             <mat-option *ngFor="let docType of _documentTypes" [value]="docType.tipoDocumentoId">
                                 {{docType.nombreDocumento}}
                             </mat-option>
@@ -24,7 +24,7 @@
                 </div>
                 <div id="documentNumber">
                     <mat-form-field>
-                        <input matInput formControlName="documentNumber" (ngModelChange)="getInfo($event)" placeholder="Numero de documento:" type="text" autocomplete="off">
+                        <input matInput formControlName="documentNumber" placeholder="Numero de documento:" type="text" autocomplete="off">
                     </mat-form-field>
                     <error-input *ngIf="_showFormErrors || _showInputErrorsForInfoClient" [errors]="getInputErrors('documentNumber')" [inputLabel]="'Numero de documento'"></error-input>
                 </div>

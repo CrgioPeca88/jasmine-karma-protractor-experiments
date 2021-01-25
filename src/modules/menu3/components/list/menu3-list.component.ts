@@ -107,14 +107,14 @@ export class Menu3ListComponent implements OnInit, AfterViewInit {
 
 	delete(id: string): void {
 		let questionMsg: string = 'Si continua eliminará el registro. ¿Esta seguro que desea continuar?';
-		this.apiFrontFacadeService.openDialog('cancel_schedule_send', questionMsg, '40%', true).afterClosed().subscribe(
+		this.apiFrontFacadeService.openDialog('remove', questionMsg, '40%', true).afterClosed().subscribe(
 			(confirmResult: boolean) => {
 				if (confirmResult) {
 					this.apiBackFacadeService.delete(id).subscribe(
 						(defaultRes: DefaultResponseMessage) => {
 							if (defaultRes.response) {
 								this.getAllMenu3();
-								this.apiFrontFacadeService.openDialog('check_circle', 'Se ha eliminado satisfactoriamente', '35%');
+								this.apiFrontFacadeService.openDialog('remove', 'Se ha eliminado satisfactoriamente', '35%');
 							}
 						});
 				}

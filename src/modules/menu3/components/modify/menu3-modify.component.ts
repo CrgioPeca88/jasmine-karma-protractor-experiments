@@ -15,7 +15,7 @@ import { Menu3TransformerModel } from '@menu3/models/menu3-transformer.model';
 import { CUSTOM_ERRORS_MENU3_SAVE } from '@shared/constants/custom-errors-config.enum';
 
 export interface PathParamsModify {
-	nId: string;
+	menu3Id: string;
 }
 
 @Component({
@@ -44,12 +44,12 @@ export class Menu3ModifyComponent implements OnInit {
 
 	ngOnInit() {
 		this._pathParams = this.apiFrontFacadeService.getPathParams(this.activatedRoute);
-		this.getDataById(this._pathParams.nId);
+		this.getDataById(this._pathParams.menu3Id);
 	}
 
-	private getDataById(nId: string): void {
+	private getDataById(menu3Id: string): void {
 		this._loadingById = true;
-		this.apiBackFacadeService.getDataById(nId).subscribe(
+		this.apiBackFacadeService.getDataById(menu3Id).subscribe(
 			(response: GetByIdMessage) => {
 				this._dataById = response;
 				this._infoData = this._menu3Transformer.tranformToInfoData(response);
