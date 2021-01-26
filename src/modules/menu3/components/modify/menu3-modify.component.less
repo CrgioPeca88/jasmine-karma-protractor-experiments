@@ -1,18 +1,21 @@
+@import '~modules/shared/shared-styles';
+
 mat-card {
 	width: 60%;
 	margin: auto;
 	margin-top: 2%;
 	margin-bottom: 2%;
 	border-style: ridge;
-	border-color: #294690;
+	border-color: @black-color;
 	h2 {
-		color: #294690;
+		color: @black-color;
 	}
 	#saveButton {
 		text-align: center;
 		.save-button {
-			background-color: #98c242;
-			color: #fff;
+			background-color: @green-color;
+			color: @black-color;
+			border: 1px solid @black-color;
 			width: 20%;
 			margin-top: 3px;
 			margin-bottom: 10px;
@@ -20,8 +23,9 @@ mat-card {
 	}
 
 	.return-button {
-		background-color: #98c242;
-		color: #fff;
+		background-color: @green-color;
+		color: @black-color;
+		border: 1px solid @black-color;
 	}
 
 	.wraper-button {

@@ -1,28 +1,30 @@
-<mat-card>
-	<mat-card-content>
-		<div class="logo">
-			<img width="60" alt="control_staffing" src="../../../../assets/img/cp88Logo.png">
-		</div>
-		<form [formGroup]="_loginFormGroup">
-			<div>
-				<mat-form-field>
-					<input matInput name="userName" placeholder="Usuario:" formControlName="userName" type="text" autocomplete="off">
-				</mat-form-field>
-				<error-input *ngIf="_showFormErrors" [errors]="getInputErrors('userName')" [inputLabel]="'Usuario'"></error-input>
+<div class="auth-login-container">
+	<mat-card>
+		<mat-card-content>
+			<div class="logo">
+				<img width="60" alt="control_staffing" src="../../../../assets/img/cp88Logo.png">
 			</div>
-			<div>
-				<mat-form-field>
-					<input matInput name="password" placeholder="Contraseña:"
-					formControlName="password" [type]="_hide ? 'password' : 'text'" autocomplete="off">
-					<button mat-icon-button matSuffix (click)="_hide = !_hide" type="button">
-    		<mat-icon>{{_hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    	</button>
-				</mat-form-field>
-				<error-input *ngIf="_showFormErrors" [errors]="getInputErrors('password')" [inputLabel]="'Contraseña'"></error-input>
-			</div>
-			<mat-card-actions>
-				<button mat-flat-button class="btn join-button" (click)="login()">Ingresar</button>
-			</mat-card-actions>
-		</form>
-	</mat-card-content>
-</mat-card>
+			<form [formGroup]="_loginFormGroup">
+				<div>
+					<mat-form-field>
+						<input matInput name="userName" placeholder="Usuario:" formControlName="userName" type="text" autocomplete="off">
+					</mat-form-field>
+					<error-input *ngIf="_showFormErrors" [errors]="getInputErrors('userName')" [inputLabel]="'Usuario'"></error-input>
+				</div>
+				<div>
+					<mat-form-field>
+						<input matInput name="password" placeholder="Contraseña:"
+						formControlName="password" [type]="_hide ? 'password' : 'text'" autocomplete="off">
+						<button mat-icon-button matSuffix (click)="_hide = !_hide" type="button">
+	    		<mat-icon>{{_hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+	    	</button>
+					</mat-form-field>
+					<error-input *ngIf="_showFormErrors" [errors]="getInputErrors('password')" [inputLabel]="'Contraseña'"></error-input>
+				</div>
+				<mat-card-actions>
+					<button mat-flat-button class="btn join-button" (click)="login()">Ingresar</button>
+				</mat-card-actions>
+			</form>
+		</mat-card-content>
+	</mat-card>
+</div>
