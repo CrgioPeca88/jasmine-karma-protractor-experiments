@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { Menu3ModifyComponent } from './menu3-modify.component';
+import { Menu3ModifyComponent } from '@menu3/components/modify/menu3-modify.component';
 
 export default function() {
 	describe('2). Menu3ModifyComponent:', () => {

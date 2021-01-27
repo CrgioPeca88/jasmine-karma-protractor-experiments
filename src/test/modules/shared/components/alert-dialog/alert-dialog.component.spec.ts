@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { AlertDialogComponent } from './alert-dialog.component';
+import { AlertDialogComponent } from '@shared/components/alert-dialog/alert-dialog.component';
 
 export default function() {
 	describe('1). AlertDialogComponent:', () => {

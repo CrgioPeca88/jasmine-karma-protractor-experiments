@@ -21,7 +21,6 @@
 				"paths": {
 		    "@modules/*": ["modules/*"],
 				"@menu3/*": ["modules/menu3/*"],
-				"@professionals/*": ["modules/professionals/*"],
 				"@administration/*": ["modules/administration/*"],
 		    "@shared/*": ["modules/shared/*"],
 		    "@cs-core/*": ["modules/shared/core/*"],

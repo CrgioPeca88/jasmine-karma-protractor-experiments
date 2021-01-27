@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assests
-import { Page404Component } from './page404.component';
+import { Page404Component } from '@modules/app/components/page404/page404.component';
 
 export default function() {
 	describe('2). Page404Component:', () => {
@@ -15,7 +15,7 @@ export default function() {
 			_component = _fixture.debugElement.componentInstance;
 		}));
 
-  it('2.1). should create the app component', () => {
+  it('2.1). should create the page 404 component', () => {
     // Action & Assert
 				expect(_component).toBeTruthy();
   });

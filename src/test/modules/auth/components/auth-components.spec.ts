@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Assets
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from '@modules/auth/components/login/login.component';
 import { AuthRoutingModule } from '@modules/auth/auth-routing.module';
 import { SharedModule } from '@shared/shared.module';
 import loginComponentTests from './login/login.component.spec';

@@ -7,12 +7,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // Assets
 import { MaterialModule } from '@shared/material.module';
-import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
-import { ErrorInputComponent } from './error-input/error-input.component';
-import { IdleComponent } from './idle/idle.component';
+import { AlertDialogComponent } from '@shared/components/alert-dialog/alert-dialog.component';
+import { ErrorInputComponent } from '@shared/components/error-input/error-input.component';
 import alertDialogComponentTests from './alert-dialog/alert-dialog.component.spec';
 import errorInputComponentTests from './error-input/error-input.component.spec';
-import idleComponentTests from './idle/idle.component.spec';
 
 describe('*[SharedModule]: -------------------------------------------', () => {
 
@@ -27,8 +25,7 @@ describe('*[SharedModule]: -------------------------------------------', () => {
 			],
 			declarations: [
 				AlertDialogComponent,
-				ErrorInputComponent,
-				IdleComponent
+				ErrorInputComponent
 			],
 			providers: [
 				{provide: MatDialogRef},
@@ -39,6 +36,5 @@ describe('*[SharedModule]: -------------------------------------------', () => {
 
 	alertDialogComponentTests();
 	errorInputComponentTests();
-	idleComponentTests();
 
 });

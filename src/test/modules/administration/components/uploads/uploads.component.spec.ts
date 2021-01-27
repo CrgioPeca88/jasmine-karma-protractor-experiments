@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { UploadsComponent } from './uploads.component';
+import { UploadsComponent } from '@modules/administration/components/uploads/uploads.component';
 
 export default function() {
 	describe('2). UploadsComponent: ', () => {

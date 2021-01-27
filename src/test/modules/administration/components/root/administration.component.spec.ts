@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { AdministrationComponent } from './administration.component';
+import { AdministrationComponent } from '@modules/administration/components/root/administration.component';
 
 export default function() {
 	describe('1). RootComponent: ', () => {

@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { ErrorInputComponent } from './error-input.component';
+import { ErrorInputComponent } from '@shared/components/error-input/error-input.component';
 
 export default function() {
 	describe('3). ErrorInputComponent:', () => {

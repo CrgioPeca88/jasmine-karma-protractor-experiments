@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { LoginComponent } from './login.component';
+import { LoginComponent } from '@modules/auth/components/login/login.component';
 
 export default function() {
 	describe('1). LoginComponent:', () => {

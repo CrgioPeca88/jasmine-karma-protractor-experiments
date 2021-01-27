@@ -2,20 +2,20 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assets
-import { Menu3ListComponent } from './menu3-list.component';
+import { Menu3AddComponent } from '@menu3/components/add/menu3-add.component';
 
 export default function() {
-	describe('3). Menu3ListComponent:', () => {
+	describe('5). Menu3AddComponent:', () => {
 		let _fixture;
 		let _component;
 
 		beforeEach( async( () => {
 			// Initial arrange
-			_fixture   = TestBed.createComponent(Menu3ListComponent);
+			_fixture   = TestBed.createComponent(Menu3AddComponent);
 			_component = _fixture.debugElement.componentInstance;
 		}));
 
-		it('3.1). should create the menu3-list component', async( () => {
+		it('5.1). should create the menu3-add component', async( () => {
     // Action & Assert
 				expect(_component).toBeTruthy();
   }));

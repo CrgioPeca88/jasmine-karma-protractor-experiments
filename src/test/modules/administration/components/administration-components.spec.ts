@@ -3,8 +3,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 // Assets
-import { AdministrationComponent } from './root/administration.component';
-import { UploadsComponent } from './uploads/uploads.component';
+import { AdministrationComponent } from '@modules/administration/components/root/administration.component';
+import { UploadsComponent } from '@modules/administration/components/uploads/uploads.component';
 import { SharedModule } from '@shared/shared.module';
 import { AdministrationRoutingModule } from '@administration/administration-routing.module';
 import uploadsComponentTests from './uploads/uploads.component.spec';
