@@ -2,7 +2,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 // Assests
-import { AppComponent } from '@modules/app/root/app.component';
+import { AppComponent } from '@modules/app/components/root/app.component';
 
 export default function() {
 	describe('1). RootComponent:', () => {
