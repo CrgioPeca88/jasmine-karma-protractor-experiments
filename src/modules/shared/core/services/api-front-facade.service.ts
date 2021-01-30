@@ -7,8 +7,10 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, NavigationExtras } from '@angular/router';
 import { Observable } from 'rxjs';
+import { MatDialogRef } from '@angular/material/dialog';
 
 // Assets
+import { AlertDialogComponent } from '@shared/components/alert-dialog/alert-dialog.component';
 import { CsHttpInjectorService } from './api-front/injectors/cs-http.injector';
 import { TokenInjectorService } from './api-front/injectors/token.injector';
 import { RouterInjectorService } from './api-front/injectors/router.injector';
@@ -147,7 +149,7 @@ export class ApiFrontFacadeService {
 	* MATERIAL SERVICES
 	------------------------------------------*/
 	openDialog(icon: string, msg: string, widthDialog: string, isConfirmDialog?: boolean,
-		configDialog?: ConfigDialog) {
+		configDialog?: ConfigDialog): MatDialogRef<AlertDialogComponent> {
 		return this.materialInjectorService.getMaterialService().openDialog(
 			icon, msg, widthDialog, isConfirmDialog, configDialog
 		);

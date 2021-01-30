@@ -1,5 +1,5 @@
 {
-    "name": "ctrl-frontend",
+    "name": "jasmine-protractor-test",
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",

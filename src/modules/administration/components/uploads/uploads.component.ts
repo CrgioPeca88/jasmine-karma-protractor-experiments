@@ -12,24 +12,23 @@ import { ApiFrontFacadeService } from '@cs-core/services/api-front-facade.servic
 })
 export class UploadsComponent {
 
+	public flag: boolean;
+
 	constructor(
 		private apiBackFacadeService: ApiBackFacadeService,
 		private apiFrontFacadeService: ApiFrontFacadeService
-	) { }
+	) {}
 
-	private getConfirmDialogResponse(questionMsg: string) {
-		return this.apiFrontFacadeService.openDialog('info', questionMsg, '35%', true).afterClosed();
-	}
-
-	modalTest() {
+	modalTest(): void {
 		let questionMsg: string = 'Realmente desea hacer la prueba?';
-		this.getConfirmDialogResponse(questionMsg).subscribe(result => {
-   if(result) {
-					this.apiBackFacadeService.modalTest().subscribe(result => {
-						this.apiFrontFacadeService.openDialog('check_circle', 'Llego bien hasta el API', '35%');
-					});
+		this.apiFrontFacadeService.openDialog('info', questionMsg, '35%', true).afterClosed().subscribe(result => {
+			if(result) {
+				this.apiBackFacadeService.modalTest().subscribe(result => {
+					this.flag = true;
+					this.apiFrontFacadeService.openDialog('check_circle', 'Llego bien hasta el API', '35%');
+				});
 			}
-  });
+		});
 	}
 
 }
