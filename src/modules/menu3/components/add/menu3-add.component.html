@@ -20,7 +20,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <error-input *ngIf="_showFormErrors || _showInputErrorsForInfo" [errors]="getInputErrors('documentType')" [inputLabel]="'Tipo de documento'"></error-input>
+                    <error-input *ngIf="_showFormErrors" [errors]="getInputErrors('documentType')" [inputLabel]="'Tipo de documento'"></error-input>
                 </div>
                 <div id="documentNumber">
                     <mat-form-field>
