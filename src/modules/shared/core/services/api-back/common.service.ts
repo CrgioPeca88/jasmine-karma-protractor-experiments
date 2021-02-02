@@ -1,6 +1,6 @@
 // Dependencies
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
 
 // Assets
 import { ApiFrontFacadeService } from '@cs-core/services/api-front-facade.service';
@@ -52,6 +52,10 @@ export class CommonService {
 			]);
 			o.complete();
 		});
+	}
+
+	getDataCounter(): Observable<number> {
+		return interval(1000);
 	}
 
 }

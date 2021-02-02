@@ -67,6 +67,10 @@ export class ApiBackFacadeService {
 		return this.commonInjectorService.getCommonService().getAllCurrencyTypes();
 	}
 
+	getDataCounter(): Observable<number> {
+		return this.commonInjectorService.getCommonService().getDataCounter();
+	}
+
 	/*-----------------------------------------
 	* MENU3 SERVICES
 	------------------------------------------*/
