@@ -1,0 +1,67 @@
+.main-container {
+  font-family: 'sans-serif';
+  width: 100%;
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+  }
+  .movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 220px;
+      height: 324px;
+      margin: 0;
+      .img-movie {
+        cursor: pointer;
+        width: inherit;
+        height: inherit;
+        border-radius: 4px;
+      }
+      .img-movie-hover {
+        width: 250px;
+        height: 354px;
+        box-shadow: 1px 11px 21px grey;
+      }
+
+      .img-info {
+        cursor: pointer;
+        background-image: linear-gradient(to top, #19232d 0%, #19232d 70%, #19232d 75%, transparent 95%, transparent 100%);
+        color: rgba(242, 244, 246, 0.7);
+        width: 236px;
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: absolute;
+        bottom: -14px;
+        gap: 15px;
+        padding-bottom: 15px;
+        border-radius: 4px;
+        font-size: 15px;
+        .info-data {
+          width: 88%;
+          font-size: 13px;
+          display: flex;
+        }
+        .info-data > strong {
+          width: 30%;
+        }
+        .info-data > span {
+          width: 70%;
+        }
+      }
+
+      .img-info > * {
+        margin: 0 7%;
+      }
+
+    }
+  }
+
+}
