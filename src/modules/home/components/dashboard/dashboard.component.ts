@@ -18,13 +18,9 @@ export interface CoverInfo {
 export class DashboardComponent implements AfterViewInit {
 
 	@ViewChildren('imgMovie') imgMovie: QueryList<any>;
-  public _showInfo: boolean;
-  public _showInfo2: boolean;
   public _moviesCover: CoverInfo[];
 
 	constructor() {
-    this._showInfo = false;
-    this._showInfo2 = false;
     this._moviesCover = [{
       urlCover: `../../../assets/img/battle_royale.jpg`,
       altCover: `Battle_Royale`,

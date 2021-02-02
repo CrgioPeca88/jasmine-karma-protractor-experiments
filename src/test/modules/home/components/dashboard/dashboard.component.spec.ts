@@ -22,7 +22,7 @@ export default function() {
 
 		it(`2.2). should have as title 'Home page under construction!'`, async(() => {
 			// Action & Assert
-			expect(_dashboardComponent._title).toEqual('Home page under construction!');
+			expect(_dashboardComponent._moviesCover.length).toEqual(2);
 		}));
 
 	});
