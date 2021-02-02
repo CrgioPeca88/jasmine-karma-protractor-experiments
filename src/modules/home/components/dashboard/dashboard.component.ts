@@ -1,5 +1,5 @@
 // Dependencies
-import { Component, ViewChildren, AfterViewInit, QueryList, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChildren, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit, QueryList, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription, pipe } from 'rxjs';
 import { take } from 'rxjs/operators';
 // Assets
@@ -17,17 +17,24 @@ export interface CoverInfo {
 @Component({
 	selector: 'home-dashboard',
 	templateUrl: './dashboard.component.html',
-	styleUrls: ['./dashboard.component.less']
+	styleUrls: ['./dashboard.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardComponent implements AfterViewInit, OnDestroy {
 
 	@ViewChildren('imgMovie') imgMovie: QueryList<any>;
   public _moviesCover: CoverInfo[];
   public _counter: number;
+  public _counter2: number;
   private _counterSubscription: Subscription;
 
-	constructor(private apiBackFacadeService: ApiBackFacadeService) {
+	constructor (
+    private apiBackFacadeService: ApiBackFacadeService,
+    private cdr: ChangeDetectorRef
+  ) {
+    this._counterSubscription = new Subscription();
     this._counter = 0;
+    this._counter2 = 0;
     this._moviesCover = [{
       urlCover: `../../../assets/img/battle_royale.jpg`,
       altCover: `Battle_Royale`,
@@ -47,10 +54,16 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     let _tmpTake$: Observable<number> = this.apiBackFacadeService.getDataCounter().pipe(take(9));
-    this._counterSubscription = _tmpTake$.subscribe((value: number) => {
+    this._counterSubscription.add(_tmpTake$.subscribe((value: number) => {
       console.log(value);
       this._counter = value;
-    });
+      this.cdr.detectChanges();
+    }));
+    this._counterSubscription.add(_tmpTake$.subscribe((value: number) => {
+      console.log(value * 2);
+      this._counter2 = value * 2;
+      this.cdr.detectChanges();
+    }));
   }
 
   ngAfterViewInit(): void {
