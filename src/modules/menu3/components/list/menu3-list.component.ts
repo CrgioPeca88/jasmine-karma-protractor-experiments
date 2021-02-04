@@ -25,12 +25,12 @@ export class Menu3ListComponent implements OnInit, AfterViewInit {
 	public _dataSource: MatTableDataSource<GetAllMessage>;
 	public _menu3Transformer: Menu3TransformerModel;
 
-	@ViewChild(MatSort, { static: false }) set contentSort(sort: MatSort) {
+	@ViewChild(MatSort) set contentSort(sort: MatSort) {
 		if (this._dataSource) {
 			this._dataSource.sort = sort;
 		}
 	};
-	@ViewChild(MatPaginator, { static: false }) set contentPaginator(paginator: MatPaginator) {
+	@ViewChild(MatPaginator) set contentPaginator(paginator: MatPaginator) {
 		if (this._dataSource) {
 			this._dataSource.paginator = paginator;
 		}
