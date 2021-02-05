@@ -1,5 +1,5 @@
 // Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 // Assets
 import { Menu3Component } from '@menu3/components/root/menu3.component';
@@ -9,13 +9,13 @@ export default function() {
 		let _fixture;
 		let _component;
 
-		beforeEach( async( () => {
+		beforeEach( waitForAsync( () => {
 			// Initial arrange
 			_fixture   = TestBed.createComponent(Menu3Component);
 			_component = _fixture.debugElement.componentInstance;
 		}));
 
-		it('1.1). should create the menu3 component', async( () => {
+		it('1.1). should create the menu3 component', waitForAsync( () => {
     // Action & Assert
 				expect(_component).toBeTruthy();
   }));

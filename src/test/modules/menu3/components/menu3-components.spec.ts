@@ -1,5 +1,5 @@
 // Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
@@ -20,7 +20,7 @@ import menu3DetailComponentTests from './detail/menu3-detail.component.spec';
 
 describe('*[Menu3Module]: ----------------------------------------', () => {
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 					imports: [
 						SharedModule,

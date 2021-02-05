@@ -1,5 +1,5 @@
 /// Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogRef } from '@angular/material/dialog';
 import { of } from 'rxjs';
 
@@ -12,24 +12,24 @@ export default function() {
 		let _fixture;
 		let _component;
 
-		beforeEach( async( () => {
+		beforeEach( waitForAsync( () => {
 			// Initial arrange
 			_fixture   = TestBed.createComponent(UploadsComponent);
 			_component = _fixture.debugElement.componentInstance;
 		}));
 
-		it('2.1). should create uploads-component', async( () => {
+		it('2.1). should create uploads-component', waitForAsync( () => {
 			// Action & Assert
 			expect(_component).toBeTruthy();
 		}));
 
-		it('2.2). should open the confirm modal and show the success response', async( () => {
+		it('2.2). should open the confirm modal and show the success response', waitForAsync( () => {
 			// Action & Assert
 			_component.modalTest();
 			expect(_component.flag).toEqual(true);
 		}));
 
-		it('2.3). should not send the request because the option selected was cancel', async( () => {
+		it('2.3). should not send the request because the option selected was cancel', waitForAsync( () => {
 			// Arrange
 			spyOn(_component.apiFrontFacadeService, 'openDialog').and.returnValue(
 				{ afterClosed: () => of(undefined) } as MatDialogRef<AlertDialogComponent>

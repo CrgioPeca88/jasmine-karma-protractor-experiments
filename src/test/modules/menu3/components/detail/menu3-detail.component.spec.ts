@@ -1,5 +1,5 @@
 // Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogRef,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // Assets
@@ -10,7 +10,7 @@ export default function() {
 		let _fixture;
 		let _component;
 
-		beforeEach( async( () => {
+		beforeEach( waitForAsync( () => {
 			TestBed.configureTestingModule({
 				providers: [{
 					provide: MatDialogRef, useValue: []
@@ -23,7 +23,7 @@ export default function() {
 			_component = _fixture.debugElement.componentInstance;
 		}));
 
-		it('6.1). should create the menu3-detail component', async( () => {
+		it('6.1). should create the menu3-detail component', waitForAsync( () => {
     // Action & Assert
 				expect(_component).toBeTruthy();
   }));

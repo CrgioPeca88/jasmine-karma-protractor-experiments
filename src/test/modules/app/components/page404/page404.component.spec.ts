@@ -1,5 +1,5 @@
 // Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 
 // Assests
 import { Page404Component } from '@modules/app/components/page404/page404.component';
@@ -9,7 +9,7 @@ export default function() {
 		let _fixture;
 		let _component;
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			// Initial Arrange
 			_fixture = TestBed.createComponent(Page404Component);
 			_component = _fixture.debugElement.componentInstance;

@@ -1,5 +1,5 @@
 // Dependencies
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { MatDialogRef,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // Assets
@@ -11,7 +11,7 @@ export default function() {
 		let _fixture;
 		let _alertDialogComponent;
 
-		beforeEach(async(() => {
+		beforeEach(waitForAsync(() => {
 			TestBed.configureTestingModule({
 				providers: [{
 					provide: MatDialogRef, useValue: []
@@ -24,7 +24,7 @@ export default function() {
 			_alertDialogComponent = _fixture.debugElement.componentInstance;
 		}));
 
-		it('1.1). should create the alert-dialog component', async( () => {
+		it('1.1). should create the alert-dialog component', waitForAsync( () => {
 			// Action & Assert
 			expect(_alertDialogComponent).toBeTruthy();
 		}));
