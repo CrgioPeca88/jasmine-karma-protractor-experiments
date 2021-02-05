@@ -3,7 +3,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 // Assets
 import { MaterialModule } from '@shared/material.module';
@@ -27,10 +27,9 @@ describe('*[SharedModule]: -------------------------------------------', () => {
 				AlertDialogComponent,
 				ErrorInputComponent
 			],
-			providers: [
-				{provide: MatDialogRef},
-				{provide: MAT_DIALOG_DATA}
-			]
+			providers: [{
+				provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false }
+			}]
 		}).compileComponents();
 	}));
 

@@ -2,7 +2,8 @@
 import { NgModule } from '@angular/core';
 import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
 import { Platform } from '@angular/cdk/platform';
-import { NativeDateAdapter, MatExpansionModule } from '@angular/material';
+import { NativeDateAdapter } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDateFormats } from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -79,7 +80,7 @@ export const CS_DATE_FORMATS: MatDateFormats = {
 	],
 	providers: [
 		{ provide: DateAdapter, useClass: CsDateAdapter, deps: [MAT_DATE_FORMATS, Platform]},
-  { provide: MAT_DATE_FORMATS, useValue: CS_DATE_FORMATS}
+  	{ provide: MAT_DATE_FORMATS, useValue: CS_DATE_FORMATS}
 	],
 	exports: [
 		MatNativeDateModule,

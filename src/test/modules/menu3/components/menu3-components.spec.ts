@@ -1,7 +1,7 @@
 // Dependencies
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 // Assets
 import { SharedModule } from '@shared/shared.module';
@@ -22,7 +22,7 @@ describe('*[Menu3Module]: ----------------------------------------', () => {
 
 	beforeEach(async(() => {
 			TestBed.configureTestingModule({
-					imports : [
+					imports: [
 						SharedModule,
 						Menu3RoutingModule,
 						RouterTestingModule
@@ -34,10 +34,9 @@ describe('*[Menu3Module]: ----------------------------------------', () => {
 						InfoMenu3CommonComponent,
 						Menu3Component
 					],
-					providers: [
-						{provide: MatDialogRef},
-						{provide: MAT_DIALOG_DATA}
-					]
+					providers: [{
+						provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false }
+					}]
 			}).compileComponents();
 
 	}));

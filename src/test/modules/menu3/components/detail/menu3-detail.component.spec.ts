@@ -1,5 +1,6 @@
 // Dependencies
 import { TestBed, async } from '@angular/core/testing';
+import { MatDialogRef,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 // Assets
 import { Menu3DetailComponent } from '@menu3/components/detail/menu3-detail.component';
@@ -10,6 +11,13 @@ export default function() {
 		let _component;
 
 		beforeEach( async( () => {
+			TestBed.configureTestingModule({
+				providers: [{
+					provide: MatDialogRef, useValue: []
+				}, {
+					provide: MAT_DIALOG_DATA, useValue: []
+				}]
+			}).compileComponents();
 			// Initial arrange
 			_fixture   = TestBed.createComponent(Menu3DetailComponent);
 			_component = _fixture.debugElement.componentInstance;
