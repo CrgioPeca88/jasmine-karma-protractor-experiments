@@ -4,8 +4,8 @@ import { Subscription } from 'rxjs';
 import { Router, NavigationExtras } from '@angular/router';
 
 // Assets
-import { VehiclesService } from '@modules/shared/services/vehicles.service.ts';
-import { Vehicle } from '@modules/shared/models/Vehicle.model';
+import { ApiBackFacadeService } from '@cs-core/services/api-back-facade.service';
+import { Vehicle } from '@vehicles/models/Vehicle.model';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   public _rentCategories: Vehicle[];
 
   constructor(
-    private _vehiclesService: VehiclesService,
+    private _apiBackFacadeService: ApiBackFacadeService,
     private router: Router
   ) {
     this._getRentCarsSubs = new Subscription();
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._getRentCarsSubs.add(
-      this._vehiclesService.getVehiclesToRent().subscribe(
+      this._apiBackFacadeService.getVehiclesToRent().subscribe(
         (rentCategories: Vehicle[]) => {
           this._rentCategories = rentCategories;
         })

@@ -3,7 +3,7 @@ import { Component, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 
 // Assets
-import { Vehicle } from '@modules/shared/models/Vehicle.model';
+import { Vehicle } from '@vehicles/models/Vehicle.model';
 
 @Component({
   selector: 'vehicles-detail',

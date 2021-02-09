@@ -7,6 +7,7 @@ import { AuthInjectorService } from './api-back/injectors/auth.injector';
 import { AdministrationInjectorService } from './api-back/injectors/administration.injector';
 import { CommonInjectorService } from './api-back/injectors/common.injector';
 import { Menu3InjectorService } from './api-back/injectors/menu3.injector';
+import { VehiclesInjectorService } from './api-back/injectors/vehicles.injector';
 import { GetDocumentTypesMessage } from '@cs-core/models/dtos/GetDocumentTypesMessage.model';
 import { GetBusinessDaysMessage } from '@cs-core/models/dtos/GetBusinessDaysMessage.model';
 import { GetTypesMessage } from '@menu3/models/dtos/GetTypesMessage.model';
@@ -16,6 +17,7 @@ import { PutModifyMessage } from '@menu3/models/dtos/PutModifyMessage.model';
 import { GetAllMessage } from '@menu3/models/dtos/GetAllMessage.model';
 import { DefaultResponseMessage } from '@cs-core/models/dtos/DefaultResponseMessage.model';
 import { GetCurrencyTypeMessage } from '@cs-core/models/dtos/GetCurrencyTypeMessage.model';
+import { Vehicle } from '@vehicles/models/Vehicle.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -26,7 +28,8 @@ export class ApiBackFacadeService {
 		private authInjectorService: AuthInjectorService,
 		private administrationInjectorService: AdministrationInjectorService,
 		private menu3InjectorService: Menu3InjectorService,
-		private commonInjectorService: CommonInjectorService
+		private commonInjectorService: CommonInjectorService,
+		private vehiclesInjectorService: VehiclesInjectorService
 	) { }
 
 	/*-----------------------------------------
@@ -98,9 +101,16 @@ export class ApiBackFacadeService {
 		return this.menu3InjectorService.getMenu3Service().getDataById(id);
 	}
 
-
 	getByPId(id: string): Observable<any> {
 		return this.menu3InjectorService.getMenu3Service().getByPId(id);
+	}
+
+	/*-----------------------------------------
+	* MENU3 SERVICES
+	------------------------------------------*/
+
+	public getVehiclesToRent(): Observable<Vehicle[]> {
+		return this.vehiclesInjectorService.getVehiclesService().getVehiclesToRent();
 	}
 
 }

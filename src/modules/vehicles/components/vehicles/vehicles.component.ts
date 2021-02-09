@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './vehicles.component.html',
   styleUrls: ['./vehicles.component.less']
 })
-export class AppComponent {
+export class VehiclesComponent {
 
   constructor() {}
 
