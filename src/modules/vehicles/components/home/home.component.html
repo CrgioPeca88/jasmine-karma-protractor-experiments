@@ -1,0 +1,18 @@
+<section class="main-section">
+  <div class="primary-message">
+    <h3>Best Cars in town for you</h3>
+    <h5>Rent  Cars from TMYZKM</h5>
+  </div>
+  <div class="rent-cars-cover">
+    <div class="car-card" *ngFor="let rc of _rentCategories">
+      <figure class="card-img">
+        <img [src]="rc.imgUrl">
+      </figure>
+      <div class="card-info">
+        <h3>{{rc.vehicleCategory}}</h3>
+        <p>{{rc.categoryInformation}}</p>
+        <button type="button" name="details" (click)="goToDetails(rc)">-More-</button>
+      </div>
+    </div>
+  </div>
+</section>

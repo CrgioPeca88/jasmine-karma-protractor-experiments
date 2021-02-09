@@ -22,6 +22,7 @@
 		    "@modules/*": ["modules/*"],
 				"@menu3/*": ["modules/menu3/*"],
 				"@administration/*": ["modules/administration/*"],
+				"@vehicles/*": ["modules/vehicles/*"],
 		    "@shared/*": ["modules/shared/*"],
 		    "@cs-core/*": ["modules/shared/core/*"],
 		    "@env/*": ["environments/*"],

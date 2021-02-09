@@ -13,6 +13,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { AppComponent } from './components/root/app.component';
 import { SharedModule } from '@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { VehiclesModule } from '@vehicles/vehicles.module';
 
 @NgModule({
 		imports: [
@@ -21,11 +22,12 @@ import { AppRoutingModule } from './app-routing.module';
 			SharedModule,
 			HttpClientModule,
 			AppRoutingModule,
+			VehiclesModule
 		],
 		declarations: [
-   Page404Component,
+   		Page404Component,
 			AppComponent
-  ],
+  	],
 		providers: [
 			{ provide: ErrorHandler, useClass: CsErrorHandlerService },
 			{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

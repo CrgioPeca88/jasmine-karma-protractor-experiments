@@ -1,0 +1,44 @@
+<section class="detail-section" *ngIf="_vehicleInfo">
+  <div class="frame-detail">
+    <h1 class="frame-title">{{_vehicleInfo.vehicleCategory}}</h1>
+    <div class="frame-gradient-container">
+      <p class="frame-text">
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+        {{_vehicleInfo.categoryInformation}}
+      </p>
+      <figure class="frame-img">
+        <img [src]="_vehicleInfo.imgUrl" alt="category vehicle image">
+      </figure>
+    </div>
+    <div class="frame-actions">
+      <button type="button" name="goBack" (click)="goToBack()">Regresar</button>
+      <button type="button" name="goToQuote">Cotizar</button>
+    </div>
+  </div>
+</section>
