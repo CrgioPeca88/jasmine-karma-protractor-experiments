@@ -13,15 +13,15 @@ export class VehiclesService {
 
   getVehiclesToRent(): Observable<Vehicle[]> {
     return of([{
-      imgUrl: '../../../assets/c-cc.jpg',
+      imgUrl: '../../../../assets/img/c-cc.jpg',
       vehicleCategory: 'Classic Cars',
       categoryInformation: 'Information about classic cars, Information about classic cars, Information about classic cars'
     }, {
-      imgUrl: '../../../assets/f12-tdf-sc.jpg',
+      imgUrl: '../../../../assets/img/f12-tdf-sc.jpg',
       vehicleCategory: 'Sports Cars',
       categoryInformation: 'Information about Sports cars, Information about Sports cars, Information about Sports cars'
     }, {
-      imgUrl: '../../../assets/lu-lc.jpg',
+      imgUrl: '../../../../assets/img/lu-lc.jpg',
       vehicleCategory: 'Luxury Cars',
       categoryInformation: 'Information about Luxury cars, Information about Luxury cars, Information about Luxury cars'
     }]);

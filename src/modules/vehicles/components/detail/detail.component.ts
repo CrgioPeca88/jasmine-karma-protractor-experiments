@@ -22,12 +22,12 @@ public _vehicleInfo: Vehicle;
 
   ngDoCheck(): void {
     if (typeof this._vehicleInfo === 'undefined' ) {
-      this._router.navigate(['/home']);
+      this._router.navigate(['/vehicles/home']);
     }
   }
 
   public goToBack(): void {
-    this._router.navigate(['/home']);
+    this._router.navigate(['/vehicles/home']);
   }
 
 }

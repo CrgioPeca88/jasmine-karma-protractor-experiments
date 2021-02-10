@@ -19,6 +19,9 @@ const routes: Routes = [{
 	path: 'menu3',
 	loadChildren: () => import('@modules/menu3/menu3.module').then(modules => modules.Menu3Module)
 }, {
+	path: 'vehicles',
+	loadChildren: () => import('@modules/vehicles/vehicles.module').then(modules => modules.VehiclesModule)
+}, {
 	path: '',
 	redirectTo: '/login',
 	pathMatch: 'full'
