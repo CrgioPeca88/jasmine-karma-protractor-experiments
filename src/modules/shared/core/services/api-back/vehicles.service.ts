@@ -1,6 +1,7 @@
 // Dependencies
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 // Assets
 import { Vehicle } from '@vehicles/models/Vehicle.model';
@@ -29,11 +30,15 @@ export class VehiclesService {
   }
 
   public getVehiclesHeaderData(): Observable<VehicleHeaderData> {
-    return of({
-      imgUrl: '../../../../../../assets/img/amg-gtr-wallpaper.jpg',
-      mainTitle: 'Rent your dream car',
-      mainText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut'
-    });
+    return interval(1000).pipe(
+      map((intervalNum: number) => {
+          return ({
+            imgUrl: '../../../../../../assets/img/amg-gtr-wallpaper.jpg',
+            mainTitle: 'Rent your dream car',
+            mainText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut'
+          });
+      }));
+
   }
 
 }

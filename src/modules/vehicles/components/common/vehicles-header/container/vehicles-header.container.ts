@@ -1,5 +1,5 @@
 // Dependencies
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 // Assets
@@ -8,7 +8,8 @@ import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
 
 @Component({
   selector: 'app-vehicles-header-container',
-  templateUrl: './vehicles-header.container.html'
+  templateUrl: './vehicles-header.container.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VehiclesHeaderContainer implements OnInit, OnDestroy {
 
@@ -16,7 +17,8 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
   public _vehicleHeaderData: VehicleHeaderData;
 
   constructor(
-    private _apiBackFacadeService: ApiBackFacadeService
+    private _apiBackFacadeService: ApiBackFacadeService,
+    private _cdr: ChangeDetectorRef
   ) {
     this._getHeaderDataSubs = new Subscription();
   }
@@ -26,6 +28,7 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
       this._apiBackFacadeService.getVehiclesHeaderData().subscribe(
         (data: VehicleHeaderData) => {
           this._vehicleHeaderData = data;
+          this._cdr.detectChanges();
         }));
   }
 
