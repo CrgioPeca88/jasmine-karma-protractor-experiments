@@ -1,6 +1,7 @@
 // Dependencies
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+
 // Assets
 import { ApiBackFacadeService } from '@cs-core/services/api-back-facade.service';
 import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
@@ -25,7 +26,6 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
       this._apiBackFacadeService.getVehiclesHeaderData().subscribe(
         (data: VehicleHeaderData) => {
           this._vehicleHeaderData = data;
-          console.log(this);
         }));
   }
 

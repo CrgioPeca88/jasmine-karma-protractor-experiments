@@ -1,5 +1,8 @@
 // Dependencies
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+// Assets
+import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
 
 @Component({
   selector: 'app-vehicles-header-component',
@@ -7,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./vehicles-header.component.less']
 })
 export class VehiclesHeaderComponent {
+
+  @Input() vehicleHeaderData: VehicleHeaderData;
 
   constructor() {}
 

@@ -1,8 +1,8 @@
-<header class="header">
-  <img src="" alt="featured logo" class="header-img">
+<header class="header" *ngIf="vehicleHeaderData">
+  <img [src]="vehicleHeaderData.imgUrl" alt="featured logo" class="header-img">
   <div class="header-text">
-    <h1>?????</h1>
-    <span>????</span>
+    <h1>{{vehicleHeaderData.mainTitle}}</h1>
+    <span>{{vehicleHeaderData.mainText}}</span>
   </div>
   <button class="header-goto-btn" type="button" name="goTo" (click)="goTo()">↓</button>
 </header>
