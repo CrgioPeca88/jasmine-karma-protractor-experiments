@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { VehiclesRoutingModule } from './vehicles-routing.module';
 import { DetailComponent } from './components/detail/detail.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { VehiclesHeaderContainer } from './components/common/vehicles-header/container/vehicles-header.container';
+import { VehiclesHeaderComponent } from './components/common/vehicles-header/component/vehicles-header.component';
 import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
   declarations: [
     HomeComponent,
     VehiclesComponent,
+    VehiclesHeaderContainer,
+    VehiclesHeaderComponent,
     DetailComponent
   ]
 })

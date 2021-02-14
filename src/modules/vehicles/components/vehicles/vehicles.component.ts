@@ -10,8 +10,4 @@ export class VehiclesComponent {
 
   constructor() {}
 
-  public goTo(): void {
-    console.log('-------goTo-------');
-  }
-
 }
