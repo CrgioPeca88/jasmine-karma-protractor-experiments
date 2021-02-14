@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 
 // Assets
 import { Vehicle } from '@vehicles/models/Vehicle.model';
+import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Vehicle } from '@vehicles/models/Vehicle.model';
 export class VehiclesService {
   constructor() {}
 
-  getVehiclesToRent(): Observable<Vehicle[]> {
+  public getVehiclesToRent(): Observable<Vehicle[]> {
     return of([{
       imgUrl: '../../../../assets/img/c-cc.jpg',
       vehicleCategory: 'Classic Cars',
@@ -26,4 +27,13 @@ export class VehiclesService {
       categoryInformation: 'Information about Luxury cars, Information about Luxury cars, Information about Luxury cars'
     }]);
   }
+
+  public getVehiclesHeaderData(): Observable<VehicleHeaderData> {
+    return of({
+      imgUrl: '../../../../../../assets/img/amg-gtr-wallpaper.jpg',
+      mainTitle: 'Rent your dream car',
+      mainText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut'
+    });
+  }
+
 }

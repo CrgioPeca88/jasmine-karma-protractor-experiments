@@ -18,6 +18,7 @@ import { GetAllMessage } from '@menu3/models/dtos/GetAllMessage.model';
 import { DefaultResponseMessage } from '@cs-core/models/dtos/DefaultResponseMessage.model';
 import { GetCurrencyTypeMessage } from '@cs-core/models/dtos/GetCurrencyTypeMessage.model';
 import { Vehicle } from '@vehicles/models/Vehicle.model';
+import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -106,11 +107,15 @@ export class ApiBackFacadeService {
 	}
 
 	/*-----------------------------------------
-	* MENU3 SERVICES
+	* VEHICLES SERVICES
 	------------------------------------------*/
 
 	public getVehiclesToRent(): Observable<Vehicle[]> {
 		return this.vehiclesInjectorService.getVehiclesService().getVehiclesToRent();
+	}
+
+	public getVehiclesHeaderData(): Observable<VehicleHeaderData> {
+		return this.vehiclesInjectorService.getVehiclesService().getVehiclesHeaderData();
 	}
 
 }
