@@ -1,0 +1,12 @@
+<div class="rent-cars-cover" *ngIf="rentCategoriesData">
+  <div class="car-card" *ngFor="let rcd of rentCategoriesData">
+    <figure class="card-img">
+      <img [src]="rcd.imgUrl">
+    </figure>
+    <div class="card-info">
+      <h3>{{rcd.vehicleCategory}}</h3>
+      <p>{{rcd.categoryInformation}}</p>
+      <button type="button" name="details" (click)="goToDetails(rcd)">-More-</button>
+    </div>
+  </div>
+</div>

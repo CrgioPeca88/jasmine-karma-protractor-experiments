@@ -1,11 +1,11 @@
 // Dependencies
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Router, NavigationExtras } from '@angular/router';
+//import { Subscription } from 'rxjs';
+//import { Router, NavigationExtras } from '@angular/router';
 
 // Assets
 import { ApiBackFacadeService } from '@cs-core/services/api-back-facade.service';
-import { Vehicle } from '@vehicles/models/Vehicle.model';
+//import { Vehicle } from '@vehicles/models/Vehicle.model';
 
 @Component({
   selector: 'app-home',
@@ -14,37 +14,28 @@ import { Vehicle } from '@vehicles/models/Vehicle.model';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  private _getRentCarsSubs: Subscription;
-  public _rentCategories: Vehicle[];
+  //private _getRentCarsSubs: Subscription;
+  //public _rentCategories: Vehicle[];
 
   constructor(
-    private _apiBackFacadeService: ApiBackFacadeService,
-    private router: Router
+    //private _apiBackFacadeService: ApiBackFacadeService,
+    //private router: Router
   ) {
-    this._getRentCarsSubs = new Subscription();
-    this._rentCategories = [];
+    //this._getRentCarsSubs = new Subscription();
+    //this._rentCategories = [];
   }
 
   ngOnInit(): void {
-    this._getRentCarsSubs.add(
+    /*this._getRentCarsSubs.add(
       this._apiBackFacadeService.getVehiclesToRent().subscribe(
         (rentCategories: Vehicle[]) => {
           this._rentCategories = rentCategories;
         })
-    );
+    );*/
   }
 
   ngOnDestroy(): void {
-    this._getRentCarsSubs.unsubscribe();
-  }
-
-  public goToDetails(rc: Vehicle): void {
-    const ne: NavigationExtras = {
-      state: {
-        value: rc
-      }
-    }
-    this.router.navigate(['/vehicles/detail'], ne);
+    //this._getRentCarsSubs.unsubscribe();
   }
 
 }
