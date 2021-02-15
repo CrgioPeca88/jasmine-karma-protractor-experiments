@@ -1,5 +1,5 @@
 // Dependencies
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 // Assets
 import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
@@ -12,11 +12,14 @@ import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
 export class VehiclesHeaderComponent {
 
   @Input() vehicleHeaderData: VehicleHeaderData;
+  @Output() clickGoTo: EventEmitter<boolean>;
 
-  constructor() {}
+  constructor() {
+    this.clickGoTo = new EventEmitter<boolean>();
+  }
 
   public goTo(): void {
-    console.log('-------goTo-------');
+    this.clickGoTo.emit(true);
   }
 
 }

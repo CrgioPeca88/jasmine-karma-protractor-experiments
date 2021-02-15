@@ -36,4 +36,8 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
     this._getHeaderDataSubs.unsubscribe();
   }
 
+  public goTo(event: boolean): void {
+    console.log('-------goTo-------', event);
+  }
+
 }
