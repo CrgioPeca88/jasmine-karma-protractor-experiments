@@ -31,6 +31,7 @@ export class CarCardContainer implements OnInit, OnDestroy {
       this._apiBackFacadeService.getVehiclesToRent().subscribe(
         (rentCategories: Vehicle[]) => {
           this._rentCategories = rentCategories;
+          this._cdr.detectChanges();
         })
     );
   }
