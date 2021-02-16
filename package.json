@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "api-mock": "json-server --watch db-mock.json",
     "build": "ng build -c dev",
     "test": "ng test --code-coverage",
     "e2e": "ng e2e"
