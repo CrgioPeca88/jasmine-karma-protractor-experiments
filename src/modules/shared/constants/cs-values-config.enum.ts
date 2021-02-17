@@ -14,3 +14,7 @@ export const JUSTIFY_STATES_VALUE: JustifyStatesValue[] = [
 	{ value: JustifyStates.inactive, description: 'INACTIVO' }
 ];
 Object.freeze(JUSTIFY_STATES_VALUE);
+
+export const CL: (p: any, m?: string) => void = (param: any, message: string = '') => {
+	console.log(`%c ${message} =====>`, "color: greenyellow; background-color: black; font-weight: bold", param);
+}

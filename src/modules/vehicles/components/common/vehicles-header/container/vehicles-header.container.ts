@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 // Assets
 import { ApiBackFacadeService } from '@cs-core/services/api-back-facade.service';
 import { VehicleHeaderData } from '@vehicles/models/VehicleHeaderData.model';
+import  { CL } from '@shared/constants/cs-values-config.enum';
 
 @Component({
   selector: 'app-vehicles-header-container',
@@ -28,6 +29,7 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
       this._apiBackFacadeService.getVehiclesHeaderData().subscribe(
         (data: VehicleHeaderData) => {
           this._vehicleHeaderData = data;
+          CL(this, 'this');
           this._cdr.detectChanges();
         }));
   }
