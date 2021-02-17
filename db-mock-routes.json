@@ -1,3 +1,5 @@
 {
-  "/menu3/tipo": "/menu3-tipo"
+  "/menu3/tipo": "/menu3-tipo",
+  "/menu3/actualizar": "/menu3",
+  "/menu3/inactivar/:id": "/menu3/:id"
 }

@@ -102,10 +102,6 @@ export class ApiBackFacadeService {
 		return this.menu3InjectorService.getMenu3Service().getDataById(id);
 	}
 
-	getByPId(id: string): Observable<any> {
-		return this.menu3InjectorService.getMenu3Service().getByPId(id);
-	}
-
 	/*-----------------------------------------
 	* VEHICLES SERVICES
 	------------------------------------------*/
