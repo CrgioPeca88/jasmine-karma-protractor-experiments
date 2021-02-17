@@ -39,7 +39,7 @@ export class VehiclesHeaderContainer implements OnInit, OnDestroy {
   }
 
   public goTo(event: boolean): void {
-    console.log('-------goTo-------', event);
+    CL(event, 'goTo');
   }
 
 }

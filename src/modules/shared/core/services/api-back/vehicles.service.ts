@@ -1,7 +1,7 @@
 // Dependencies
 import { Injectable } from '@angular/core';
 import { Observable, interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 // Assets
 import { Vehicle } from '@vehicles/models/Vehicle.model';
@@ -15,6 +15,7 @@ export class VehiclesService {
 
   public getVehiclesToRent(): Observable<Vehicle[]> {
     return interval(1000).pipe(
+      take(1),
       map(()=> {
         return ([{
           imgUrl: '../../../../assets/img/c-cc.jpg',
@@ -34,6 +35,7 @@ export class VehiclesService {
 
   public getVehiclesHeaderData(): Observable<VehicleHeaderData> {
     return interval(1000).pipe(
+      take(1),
       map((intervalNum: number) => {
           return ({
             imgUrl: '../../../../../../assets/img/amg-gtr-wallpaper.jpg',
