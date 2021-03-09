@@ -2,32 +2,56 @@
 
 .header {
 	background-color: @black-color;
-	width: 100%;
- 	height: 7%;
-	text-align: center;
-	.element-menu {
-		float: left;
-		height: 100%;
-		width: 9%;
-		color: @white-color;
-		padding: 0;
-		font-weight: bold;
-	}
-	.element-menu:hover {
-		color: @red-color;
-	}
-	.logout-button {
-		float: right;
-		width: 6%;
-		height: 80%;
-		margin-top: 0.3%;
-		margin-right: 0.4%;
-		color: @black-color;
+	color: @white-color;
+	padding: 1px 0px;
+	.header-line {
 		border: 1px solid @white-color;
-		font-weight: bold;
+		margin: 5px 0px;
+    border-bottom: 7px double @white-color;
 	}
-	.logout-button:hover {
-		box-shadow: 0px 0px 10px @white-color;
-		color: gray;
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.header-start-section {
+			width: 142px;
+			display: flex;
+			justify-content: center;
+			.figure-container {
+				width: 70px;
+				border-radius: 50px;
+				border: 1px solid @black-color;
+				overflow: hidden;
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.figure-container:hover {
+				transform: scale(1.5);
+				cursor: pointer;
+			}
+		}
+		.header-center-section {
+			button {
+				font-family: system-ui;
+			}
+			button:hover {
+				font-weight: bold;
+			}
+		}
+		.header-end-section {
+			width: 130px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.logout-button {
+				width: 80px;
+			}
+			.logout-button:hover {
+				box-shadow: 0px 0px 10px @green-color;
+				font-weight: bold;
+			}
+		}
 	}
 }
