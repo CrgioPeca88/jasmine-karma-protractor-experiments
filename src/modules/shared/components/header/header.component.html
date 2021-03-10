@@ -1,26 +1,31 @@
 <header class="header">
-  <div class="header-line"></div>
-  <div class="header-content">
-    <div class="header-start-section">
-      <figure class="figure-container">
-        <img src="../../../../assets/img/cp88Logo.png" alt="Main logo page">
-      </figure>
+  <nav class="header-nav">
+    <div class="header-line"></div>
+    <div class="header-content">
+      <div class="header-start-section">
+        <figure class="figure-container">
+          <img src="../../../../assets/img/cp88Logo.png" alt="Main logo page">
+        </figure>
+      </div>
+      <div class="header-center-section">
+        <button mat-button class="element-menu" [matMenuTriggerFor]="menu1">Menu1</button>
+        <mat-menu #menu1="matMenu">
+            <button mat-menu-item (click)="redirect('/administracion/cargues')" type="button">Test Modal - API</button>
+        </mat-menu>
+        <button mat-button class="element-menu" [matMenuTriggerFor]="menu3">Menu3</button>
+        <mat-menu #menu3="matMenu">
+            <button mat-menu-item (click)="redirect('/menu3/agregar')" type="button">Agregar</button>
+            <button mat-menu-item (click)="redirect('/menu3')" type="button">Listar</button>
+        </mat-menu>
+        <button mat-button class="element-menu" (click)="redirect('vehicles/home')">Vehiculos</button>
+      </div>
+      <div class="header-end-section">
+        <button mat-flat-button class="btn logout-button" (click)="logout()" type="button">Logout</button>
+      </div>
     </div>
-    <div class="header-center-section">
-      <button mat-button class="element-menu" [matMenuTriggerFor]="menu1">Menu1</button>
-      <mat-menu #menu1="matMenu">
-          <button mat-menu-item (click)="redirect('/administracion/cargues')" type="button">Test Modal - API</button>
-      </mat-menu>
-      <button mat-button class="element-menu" [matMenuTriggerFor]="menu3">Menu3</button>
-      <mat-menu #menu3="matMenu">
-          <button mat-menu-item (click)="redirect('/menu3/agregar')" type="button">Agregar</button>
-          <button mat-menu-item (click)="redirect('/menu3')" type="button">Listar</button>
-      </mat-menu>
-      <button mat-button class="element-menu" (click)="redirect('vehicles/home')">Vehiculos</button>
-    </div>
-    <div class="header-end-section">
-      <button mat-flat-button class="btn logout-button" (click)="logout()" type="button">Logout</button>
-    </div>
-  </div>
-  <div class="header-line"></div>
+    <div class="header-line"></div>
+  </nav>
+  <figure class="dashboard-img">
+    <img src="../../../../assets/img/zx10r-home.jpg" alt="Dashboard main image">
+  </figure>
 </header>
