@@ -28,11 +28,11 @@ export class GetAllMessageObj {
 
 	constructor() {}
 
-	public getDefaultInstance(): GetAllMessage {
+	public getDefaultInstance(id: number = 1): GetAllMessage {
 		return({
-			tipoId: 1,
-			informacionId: 1,
-			cId: 1,
+			tipoId: id,
+			informacionId: id,
+			cId: id,
 			fechaInicio: "23/01/2020",
 			fechaFin: "23/01/2020",
 			diasAusencia: 2,
@@ -45,7 +45,7 @@ export class GetAllMessageObj {
 			segundoApellido: "testSegundoApellido",
 			tipoNombre: "testTipoNombre",
 			cNombre: "testCNombre",
-			pId: 1,
+			pId: id,
 			estado: "testEstado",
 			nombreCelula: "testNombreCelula",
 			descuenta: false,

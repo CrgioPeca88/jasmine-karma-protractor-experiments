@@ -12,7 +12,7 @@ import { ErrorInputComponent } from '@shared/components/error-input/error-input.
 import alertDialogComponentTests from './alert-dialog/alert-dialog.component.spec';
 import errorInputComponentTests from './error-input/error-input.component.spec';
 
-describe('*[SharedModule]: -------------------------------------------', () => {
+describe('*[SharedModule - Components]: -------------------------------------------', () => {
 
 	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
